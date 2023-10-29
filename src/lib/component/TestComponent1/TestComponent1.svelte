@@ -1,16 +1,14 @@
 <script>
-	import { XXL, XXXL, XL, LG, MD, SM, screenSize } from '$lib/store/currentScreenWidth';
+	import { screenSize, onDesktop, onMobile } from '$lib/store/currentScreenWidth';
+
+	$: console.log($screenSize);
 </script>
 
-{#if $screenSize === SM}
+{#if $onMobile}
 	mobile
 {/if}
 
-{#if $screenSize === MD}
-	tablet
-{/if}
-
-{#if $screenSize === LG || $screenSize === XL || $screenSize === XXL || $screenSize === XXXL}
+{#if $onDesktop}
 	desktop
 {/if}
 

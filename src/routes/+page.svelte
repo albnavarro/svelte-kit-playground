@@ -1,6 +1,13 @@
 <script>
 	import TestComponent1 from '$lib/component/TestComponent1/TestComponent1.svelte';
-	import { breakpoint, screenSize } from '$lib/store/currentScreenWidth';
+	import {
+		breakpoint,
+		isDesktop,
+		isMobile,
+		onDesktop,
+		onMobile,
+		screenSize
+	} from '$lib/store/currentScreenWidth';
 	import { debounce } from '$lib/utils/debounce';
 	import { onMount } from 'svelte';
 
@@ -18,6 +25,8 @@
 		}, '');
 
 		screenSize.set(currentBreackpoint);
+		onDesktop.set(isDesktop.includes(currentBreackpoint));
+		onMobile.set(isMobile.includes(currentBreackpoint));
 	};
 
 	const onResize = debounce((/** @type {number} value */ value) => {

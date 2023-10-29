@@ -7,6 +7,9 @@ export const XL = 'XL';
 export const XXL = 'XXL';
 export const XXXL = 'XXXL';
 
+export const isDesktop = [LG, XL, XXL, XXXL];
+export const isMobile = [SM, MD];
+
 export const breakpoint = {
 	SM: 320,
 	MD: 768,
@@ -16,5 +19,11 @@ export const breakpoint = {
 	XXXL: 1920
 };
 
-/** @type{import('svelte/store').Writable<( 'SM'|'MD'|'LG'|'XL'|'XXL'|'XXXL'|'' )>} */
+/** @type{import('svelte/store').Writable<string>} */
 export const screenSize = writable('');
+
+/** @type{import('svelte/store').Writable<boolean>} */
+export const onDesktop = writable(false);
+
+/** @type{import('svelte/store').Writable<boolean>} */
+export const onMobile = writable(false);
