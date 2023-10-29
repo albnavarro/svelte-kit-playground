@@ -1,4 +1,5 @@
 <script>
+	import TestComponent1 from '$lib/component/TestComponent1/TestComponent1.svelte';
 	import { breakpoint, screenSize } from '$lib/store/currentScreenWidth';
 	import { debounce } from '$lib/utils/debounce';
 	import { onMount } from 'svelte';
@@ -30,7 +31,7 @@
 </script>
 
 <svelte:window bind:innerWidth={screenWidth} />
-<div>{$screenSize || ''}</div>
+<TestComponent1 />
 
 <style>
 </style>
