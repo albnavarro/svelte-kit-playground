@@ -16,4 +16,5 @@ export const breakpoint = {
 	XXXL: 1920
 };
 
+/** @type{import('svelte/store').Writable<( 'SM'|'MD'|'LG'|'XL'|'XXL'|'XXXL'|'' )>} */
 export const screenSize = writable('');
